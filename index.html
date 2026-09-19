@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Social Promo</title>
+    <title>My Promotions</title>
 
     <style>
         * {
@@ -14,67 +13,50 @@
         body {
             margin: 0;
             font-family: Arial, sans-serif;
-            background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045);
-            min-height: 100vh;
+            background: #f5f5f5;
         }
 
-        /* LOGIN PAGE */
+        /* LOGIN */
 
-        .login-page {
+        #loginPage {
             min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            padding: 20px;
+            background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045);
         }
 
         .login-box {
-            width: 400px;
             background: white;
-            padding: 40px;
-            border-radius: 18px;
+            width: 380px;
+            padding: 35px;
+            border-radius: 15px;
             text-align: center;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
         }
 
-        .logo {
-            font-size: 42px;
-            font-weight: bold;
-            margin-bottom: 25px;
-        }
-
-        .promotion-message {
-            background: #fff3e0;
-            color: #e65100;
-            padding: 18px;
-            border-radius: 12px;
-            margin-bottom: 25px;
-            font-size: 18px;
+        .login-box h1 {
+            font-size: 38px;
         }
 
         input {
             width: 100%;
-            padding: 15px;
+            padding: 14px;
             margin: 8px 0;
             border: 1px solid #ddd;
-            border-radius: 8px;
+            border-radius: 7px;
             font-size: 16px;
         }
 
         .login-btn {
             width: 100%;
-            padding: 15px;
-            margin-top: 15px;
-            border: none;
-            border-radius: 8px;
+            padding: 14px;
+            margin-top: 12px;
             background: #3897f0;
             color: white;
-            font-size: 18px;
+            border: none;
+            border-radius: 7px;
+            font-size: 17px;
             cursor: pointer;
-        }
-
-        .login-btn:hover {
-            background: #1877d2;
         }
 
         .error {
@@ -82,39 +64,29 @@
             margin-top: 15px;
         }
 
-        .demo-info {
-            margin-top: 20px;
-            padding: 15px;
-            background: #f1f1f1;
-            border-radius: 10px;
-            font-size: 14px;
-        }
 
+        /* PROMOTIONS */
 
-        /* PROMOTION PAGE */
-
-        .promo-page {
+        #promotionPage {
             display: none;
             min-height: 100vh;
-            background: #f5f5f5;
         }
 
-        .navbar {
-            background: white;
+        .header {
+            background: #111827;
+            color: white;
             padding: 18px 40px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
 
-        .navbar h2 {
+        .header h2 {
             margin: 0;
-            color: #833ab4;
         }
 
-        .logout-btn {
-            background: #e50914;
+        .logout {
+            background: #ef4444;
             color: white;
             border: none;
             padding: 10px 18px;
@@ -122,23 +94,16 @@
             cursor: pointer;
         }
 
-        .hero {
+        .welcome {
             text-align: center;
-            padding: 45px 20px 25px;
+            padding: 40px 20px 20px;
         }
 
-        .hero h1 {
-            font-size: 38px;
-            margin-bottom: 10px;
-            color: #222;
+        .welcome h1 {
+            font-size: 36px;
         }
 
-        .hero p {
-            color: #666;
-            font-size: 18px;
-        }
-
-        .offers {
+        .promotions {
             max-width: 1100px;
             margin: auto;
             padding: 20px;
@@ -147,109 +112,44 @@
             gap: 25px;
         }
 
-        .offer {
+        .promo-card {
             background: white;
-            border-radius: 15px;
+            border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.12);
-            transition: transform 0.2s;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
         }
 
-        .offer:hover {
-            transform: translateY(-5px);
+        .promo-image {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
         }
 
-        .offer-top {
-            padding: 30px;
-            text-align: center;
-            color: white;
+        .promo-content {
+            padding: 20px;
         }
 
-        .offer:nth-child(1) .offer-top {
-            background: linear-gradient(135deg, #833ab4, #fd1d1d);
-        }
-
-        .offer:nth-child(2) .offer-top {
-            background: linear-gradient(135deg, #11998e, #38ef7d);
-        }
-
-        .offer:nth-child(3) .offer-top {
-            background: linear-gradient(135deg, #ff8008, #ffc837);
-        }
-
-        .offer:nth-child(4) .offer-top {
-            background: linear-gradient(135deg, #396afc, #2948ff);
-        }
-
-        .offer:nth-child(5) .offer-top {
-            background: linear-gradient(135deg, #ee0979, #ff6a00);
-        }
-
-        .offer:nth-child(6) .offer-top {
-            background: linear-gradient(135deg, #42275a, #734b6d);
-        }
-
-        .offer-icon {
-            font-size: 50px;
-        }
-
-        .discount {
-            font-size: 32px;
-            font-weight: bold;
-            margin-top: 10px;
-        }
-
-        .offer-body {
-            padding: 22px;
-        }
-
-        .offer-body h3 {
+        .promo-content h2 {
             margin-top: 0;
-            font-size: 21px;
         }
 
-        .offer-body p {
+        .promo-content p {
             color: #666;
             line-height: 1.5;
         }
 
-        .claim-btn {
+        .promo-btn {
             width: 100%;
             padding: 12px;
-            border: none;
-            border-radius: 7px;
             background: #111827;
             color: white;
-            font-size: 16px;
+            border: none;
+            border-radius: 6px;
             cursor: pointer;
         }
 
-        .claim-btn:hover {
+        .promo-btn:hover {
             background: #374151;
-        }
-
-        .claimed {
-            background: #16a34a;
-        }
-
-        .footer {
-            text-align: center;
-            padding: 30px;
-            color: #777;
-        }
-
-        @media (max-width: 600px) {
-            .login-box {
-                width: 100%;
-            }
-
-            .navbar {
-                padding: 15px 20px;
-            }
-
-            .hero h1 {
-                font-size: 30px;
-            }
         }
     </style>
 </head>
@@ -259,118 +159,96 @@
 
 <!-- ================= LOGIN PAGE ================= -->
 
-<div class="login-page" id="loginPage">
+<div id="loginPage">
 
     <div class="login-box">
 
-        <div class="logo">
-            Social Promo
-        </div>
+        <h1>My Promotions</h1>
 
-        <div class="promotion-message">
-            🎉 <strong>Special Promotions</strong><br>
-            Login to unlock today's exclusive offers!
-        </div>
+        <p>Login to view exclusive promotions</p>
 
         <form onsubmit="login(event)">
 
             <input
                 type="text"
                 id="username"
-                placeholder="Demo username"
+                placeholder="Username"
                 required
             >
 
             <input
                 type="password"
                 id="password"
-                placeholder="Demo password"
+                placeholder="Password"
                 required
             >
 
             <button class="login-btn" type="submit">
-                Continue
+                Login
             </button>
 
         </form>
 
         <div id="error" class="error"></div>
 
-        <div class="demo-info">
-            <strong>Demo Login</strong><br><br>
-
-            Username: <b>demo_user</b><br>
-            Password: <b>demo123</b>
-        </div>
-
     </div>
 
 </div>
 
 
-<!-- ================= PROMOTIONS PAGE ================= -->
+<!-- ================= YOUR PROMOTIONS PAGE ================= -->
 
-<div class="promo-page" id="promoPage">
+<div id="promotionPage">
 
-    <div class="navbar">
+    <div class="header">
 
-        <h2>🎁 Social Promo</h2>
+        <h2>🎁 My Promotions</h2>
 
-        <button class="logout-btn" onclick="logout()">
+        <button class="logout" onclick="logout()">
             Logout
         </button>
 
     </div>
 
 
-    <div class="hero">
+    <div class="welcome">
 
-        <h1>🎉 Exclusive Promotions</h1>
+        <h1>🎉 Welcome!</h1>
 
         <p>
-            Welcome! Here are today's special offers.
+            Check out our latest exclusive promotions.
         </p>
 
     </div>
 
 
-    <div class="offers">
+    <div class="promotions">
 
 
-        <!-- OFFER 1 -->
+        <!-- YOUR PROMOTION 1 -->
 
-        <div class="offer">
+        <div class="promo-card">
 
-            <div class="offer-top">
+            <img
+                class="promo-image"
+                src="https://via.placeholder.com/500x300?text=Promotion+1"
+                alt="Promotion 1"
+            >
 
-                <div class="offer-icon">
-                    🎁
-                </div>
+            <div class="promo-content">
 
-                <div class="discount">
-                    50% OFF
-                </div>
-
-                <div>
-                    Special Offer
-                </div>
-
-            </div>
-
-            <div class="offer-body">
-
-                <h3>Half Price Deal</h3>
+                <h2>🔥 Special Offer</h2>
 
                 <p>
-                    Get 50% off on your next purchase.
-                    Limited time promotional offer.
+                    Get 50% OFF on selected products.
+                    Limited time offer.
                 </p>
 
                 <button
-                    class="claim-btn"
-                    onclick="claimOffer(this, 'PROMO50')">
+                    class="promo-btn"
+                    onclick="claim('50% OFF Promotion')">
 
-                    Claim Offer
+                    Claim Now
 
                 </button>
 
@@ -379,40 +257,30 @@
         </div>
 
 
-        <!-- OFFER 2 -->
+        <!-- YOUR PROMOTION 2 -->
 
-        <div class="offer">
+        <div class="promo-card">
 
-            <div class="offer-top">
+            <img
+                class="promo-image"
+                src="https://via.placeholder.com/500x300?text=Promotion+2"
+                alt="Promotion 2"
+            >
 
-                <div class="offer-icon">
-                    🚚
-                </div>
+            <div class="promo-content">
 
-                <div class="discount">
-                    FREE
-                </div>
-
-                <div>
-                    Delivery
-                </div>
-
-            </div>
-
-            <div class="offer-body">
-
-                <h3>Free Delivery</h3>
+                <h2>🎁 Free Gift</h2>
 
                 <p>
-                    Enjoy free delivery on eligible orders
-                    during this promotional period.
+                    Get a special free gift with your
+                    qualifying purchase.
                 </p>
 
                 <button
-                    class="claim-btn"
-                    onclick="claimOffer(this, 'FREEDELIVERY')">
+                    class="promo-btn"
+                    onclick="claim('Free Gift')">
 
-                    Claim Offer
+                    Claim Now
 
                 </button>
 
@@ -421,40 +289,29 @@
         </div>
 
 
-        <!-- OFFER 3 -->
+        <!-- YOUR PROMOTION 3 -->
 
-        <div class="offer">
+        <div class="promo-card">
 
-            <div class="offer-top">
+            <img
+                class="promo-image"
+                src="https://via.placeholder.com/500x300?text=Promotion+3"
+                alt="Promotion 3"
+            >
 
-                <div class="offer-icon">
-                    💰
-                </div>
+            <div class="promo-content">
 
-                <div class="discount">
-                    ₹500 OFF
-                </div>
-
-                <div>
-                    Shopping Voucher
-                </div>
-
-            </div>
-
-            <div class="offer-body">
-
-                <h3>₹500 Shopping Voucher</h3>
+                <h2>💰 ₹500 OFF</h2>
 
                 <p>
-                    Receive a ₹500 promotional voucher
-                    on qualifying purchases.
+                    Save ₹500 on your next eligible order.
                 </p>
 
                 <button
-                    class="claim-btn"
-                    onclick="claimOffer(this, 'SAVE500')">
+                    class="promo-btn"
+                    onclick="claim('₹500 OFF')">
 
-                    Claim Offer
+                    Claim Now
 
                 </button>
 
@@ -463,40 +320,29 @@
         </div>
 
 
-        <!-- OFFER 4 -->
+        <!-- YOUR PROMOTION 4 -->
 
-        <div class="offer">
+        <div class="promo-card">
 
-            <div class="offer-top">
+            <img
+                class="promo-image"
+                src="https://via.placeholder.com/500x300?text=Promotion+4"
+                alt="Promotion 4"
+            >
 
-                <div class="offer-icon">
-                    ⭐
-                </div>
+            <div class="promo-content">
 
-                <div class="discount">
-                    30% OFF
-                </div>
-
-                <div>
-                    Premium Offer
-                </div>
-
-            </div>
-
-            <div class="offer-body">
-
-                <h3>Premium Discount</h3>
+                <h2>🚚 Free Delivery</h2>
 
                 <p>
-                    Get 30% off selected premium products
-                    with this special promotion.
+                    Enjoy free delivery on eligible orders.
                 </p>
 
                 <button
-                    class="claim-btn"
-                    onclick="claimOffer(this, 'PREMIUM30')">
+                    class="promo-btn"
+                    onclick="claim('Free Delivery')">
 
-                    Claim Offer
+                    Claim Now
 
                 </button>
 
@@ -504,101 +350,19 @@
 
         </div>
 
-
-        <!-- OFFER 5 -->
-
-        <div class="offer">
-
-            <div class="offer-top">
-
-                <div class="offer-icon">
-                    🔥
-                </div>
-
-                <div class="discount">
-                    BUY 1 GET 1
-                </div>
-
-                <div>
-                    Special Deal
-                </div>
-
-            </div>
-
-            <div class="offer-body">
-
-                <h3>Buy 1 Get 1 Free</h3>
-
-                <p>
-                    Selected products qualify for this
-                    limited promotional offer.
-                </p>
-
-                <button
-                    class="claim-btn"
-                    onclick="claimOffer(this, 'BOGO')">
-
-                    Claim Offer
-
-                </button>
-
-            </div>
-
-        </div>
-
-
-        <!-- OFFER 6 -->
-
-        <div class="offer">
-
-            <div class="offer-top">
-
-                <div class="offer-icon">
-                    🎟️
-                </div>
-
-                <div class="discount">
-                    20% OFF
-                </div>
-
-                <div>
-                    Weekend Deal
-                </div>
-
-            </div>
-
-            <div class="offer-body">
-
-                <h3>Weekend Special</h3>
-
-                <p>
-                    Enjoy 20% off during the weekend
-                    promotional period.
-                </p>
-
-                <button
-                    class="claim-btn"
-                    onclick="claimOffer(this, 'WEEKEND20')">
-
-                    Claim Offer
-
-                </button>
-
-            </div>
-
-        </div>
-
-    </div>
-
-
-    <div class="footer">
-        © 2026 Social Promo · Promotional demonstration
     </div>
 
 </div>
 
 
 <script>
+
+    /*
+       DEMO LOGIN ONLY
+
+       Username: demo_user
+       Password: demo123
+    */
 
     function login(event) {
 
@@ -610,62 +374,61 @@
         const password =
             document.getElementById("password").value;
 
-        const error =
-            document.getElementById("error");
-
-
-        // Demo credentials only
-
         if (
             username === "demo_user" &&
             password === "demo123"
         ) {
 
+            // Hide login
             document.getElementById("loginPage")
                 .style.display = "none";
 
-            document.getElementById("promoPage")
+            // Show YOUR promotions
+            document.getElementById("promotionPage")
                 .style.display = "block";
 
         } else {
 
-            error.innerHTML =
-                "❌ Invalid demo credentials. Use demo_user / demo123";
+            document.getElementById("error")
+                .innerText =
+                "Invalid demo username or password.";
 
         }
-
     }
 
 
-    function claimOffer(button, code) {
+    function claim(promotion) {
 
-        button.innerHTML =
-            "✓ Claimed: " + code;
-
-        button.classList.add("claimed");
-
-        button.disabled = true;
+        alert(
+            "You selected: " + promotion
+        );
 
     }
 
 
     function logout() {
 
-        document.getElementById("promoPage")
+        document.getElementById("promotionPage")
             .style.display = "none";
 
         document.getElementById("loginPage")
             .style.display = "flex";
 
         document.getElementById("username").value = "";
-
         document.getElementById("password").value = "";
-
-        document.getElementById("error").innerHTML = "";
-
     }
 
 </script>
 
 </body>
 </html>
+<h2>🔥 Special Offer</h2>
+
+<p>
+    Get 50% OFF on selected products.
+</p>
+<img
+    class="promo-image"
+    src="YOUR-IMAGE.jpg"
+    alt="Promotion"
+>
